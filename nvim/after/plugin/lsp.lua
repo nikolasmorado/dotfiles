@@ -8,6 +8,7 @@ lsp_zero.on_attach(function(client, bufnr)
   vim.keymap.set("n", "gr", function() vim.lsp.buf.references() end, opts)
   vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
   vim.keymap.set("n", "<leader>vca", function() vim.lsp.buf.code_action() end, opts)
+  vim.keymap.set("n", "<leader>ve", function() vim.diagnostic.open_float() end, opts)
 end)
 
 require('mason').setup({})
