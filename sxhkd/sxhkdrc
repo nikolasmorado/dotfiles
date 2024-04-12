@@ -130,6 +130,9 @@ super + {h,j,k,l}
 super + shift + m
 	firefox
 
+super + ctrl + shift + m
+  firefox --private-window
+
 # take screenshot
 Print
 	flameshot gui
