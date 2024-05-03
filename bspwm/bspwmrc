@@ -17,3 +17,4 @@ polybar &
 picom &
 feh --bg-fill Pictures/duel.png --bg-fill Pictures/crocodile1.png --bg-fill Pictures/flower.png &
 xrandr --output DP-4 --primary --mode 3840x2160  --output DP-0 --mode 1920x1080 --rotate right --left-of DP-4 --output HDMI-0 --mode 1920x1080 --rotate normal --right-of DP-4
+iwctl device wlan1 set-property Powered off
