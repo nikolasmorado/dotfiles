@@ -32,3 +32,9 @@ vim.opt.colorcolumn = "80"
 
 vim.o.background = "light"
 vim.cmd([[colorscheme gruvbox]])
+
+vim.filetype.add({
+  extension = {
+    templ = "templ",
+  },
+})
