@@ -34,8 +34,10 @@ vim.api.nvim_create_user_command(
   'AllYankSys',
   function()
     local p = vim.fn.getpos(".")
+    local current_view = vim.fn.winsaveview()
     vim.cmd("normal! ggVG\"+y")
     vim.fn.setpos(".", p)
+    vim.fn.winrestview(current_view)
   end,
   {}
 )
