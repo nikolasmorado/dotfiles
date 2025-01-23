@@ -38,3 +38,9 @@ vim.filetype.add({
     templ = "templ",
   },
 })
+
+vim.filetype.add({
+    extension = {
+        blade = "blade",
+    },
+})

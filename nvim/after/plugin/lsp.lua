@@ -13,7 +13,7 @@ end)
 
 require('mason').setup({})
 require('mason-lspconfig').setup({
-  ensure_installed = {'tsserver', 'rust_analyzer', 'tailwindcss', 'cssls', 'html', 'jsonls', 'marksman'}, 
+  ensure_installed = {'ts_ls', 'rust_analyzer', 'tailwindcss', 'cssls', 'html', 'jsonls', 'marksman'}, 
   handlers = {
     lsp_zero.default_setup,
     lua_ls = function()
@@ -24,6 +24,13 @@ require('mason-lspconfig').setup({
 })
 
 local lspconfig = require('lspconfig')
+
+lspconfig.elixirls.setup({
+  cmd = { "/usr/lib/elixir-ls/language_server.sh" },
+  filetypes = { "elixir", "eelixir", "heex", "surface" },
+  root_dir = root_dir,
+  single_file_support = true,
+})
 
 lspconfig.tailwindcss.setup({
     on_attach = on_attach,
@@ -41,7 +48,18 @@ lspconfig.htmx.setup({
 lspconfig.html.setup({
     on_attach = on_attach,
     capabilities = capabilities,
-    filetypes = { "html", "templ" },
+    filetypes = { "html", "templ", "blade" },
+})
+
+lspconfig.intelephense.setup({
+    filetypes = { "blade", "php" },
+    settings = {
+        intelephense = {
+            environment = {
+                phpVersion = "8.3",
+            },
+        },
+    },
 })
 
 local cmp = require('cmp')

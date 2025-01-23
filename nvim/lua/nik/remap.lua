@@ -27,3 +27,17 @@ vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
 vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
 vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 
+vim.keymap.set('n', '<leader>b', '<cmd>bprevious<CR>')
+vim.keymap.set('n', '<leader>n', '<cmd>bnext<CR>')
+
+vim.api.nvim_create_user_command(
+  'AllYankSys',
+  function()
+    local p = vim.fn.getpos(".")
+    vim.cmd("normal! ggVG\"+y")
+    vim.fn.setpos(".", p)
+  end,
+  {}
+)
+
+vim.keymap.set("n", "<leader>ay", "<cmd>AllYankSys<CR>")

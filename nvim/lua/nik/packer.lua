@@ -10,6 +10,8 @@ return require('packer').startup(function(use)
 	  requires = { {'nvim-lua/plenary.nvim'} }
   }
 
+  use('theprimeagen/vim-be-good')
+
   use { "ellisonleao/gruvbox.nvim" }
 
   use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate'})
