@@ -52,6 +52,4 @@ return require('packer').startup(function(use)
 		  {'L3MON4D3/LuaSnip'},
 	  }
   }
-
-  use("github/copilot.vim")
 end)
